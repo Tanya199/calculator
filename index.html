@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tanya</title>
+    <style>
+        div {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            background-color: beige;
+			margin:0 auto;
+			
+        }
+
+        button {
+			width: 10%;
+            height: 50px;
+            flex-direction: row;
+            justify-content: center;
+            background-color: aquamarine;
+            border: 0px solid black;
+            border-radius: 5px;
+			cursor: pointer;
+			-webkit-box-shadow: 0 1px 1px #fff;
+			-moz-box-shadow:  0 1px 1px #fff;
+			box-shadow:  1px 1px 0 #fff, inset 0 1px 1px rgba(0, 0, 0, 0.3);
+        }
+        button:hover{
+            background-color: aquamarine;
+            border-radius: 15px;
+			-webkit-box-shadow: 0 1px 1px #fff;
+			-moz-box-shadow:  0 1px 1px #fff;
+			box-shadow:  1px 1px 0 #fff, inset 0 2px 2px rgba(0, 0, 0, 0.3);
+        }
+        button:active {
+            background-color: aqua;
+            border-radius: 10px;
+            border: 0px solid black;
+            font-style: oblique;
+			
+        }
+        button:focus {
+            outline: -webkit-focus-ring-color auto 0px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div id='content'>
+
+    <button id="create">CREATE CALCULATOR</button>
+
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
