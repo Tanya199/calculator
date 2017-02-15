@@ -1,83 +1,46 @@
-/**
- * Created by ayveren on 2/8/17.
- */
-(function () {
+(function(){
+    
+    console.log('sadfghj');
+    var tempNumber = 0;
+    var action = null;
+    
+    var numberDiv = document.getElementById("number");
+    var input = document.getElementsByTagName("input")[0];
+    var expressionDiv = document.getElementById("expression");
+    
+    numberDiv.addEventListener("click", function(event){
+//        input.value = input.value + e.target.innerHTML;
+        input.value += event.target.innerHTML;
+        console.log(event.target.innerHTML);
+    });
+    expressionDiv.addEventListener("click", function(event){
+    
+       switch(event.target.innerHTML) {
+          case 'C':  // if (x === 'value1')
+            clearInput();
+            break;
 
-	var contentDiv = document.getElementById("content");
-	var createButton = document.getElementById("create");
-	var result = document.createElement("p");
+          case '+':  // if (x === 'value2')
+            tempNumber = input.value;
+            clearInput();
+            break;
+               
+        case '=':  // if (x === 'value2')
+            if(tempNumber != 0){
+               input.value = +tempNumber + +input.value;
+            }
+            tempNumber = 0;
+            break;
 
-	createButton.addEventListener("click", function () { //добавить клик на кнопку
-		contentDiv.removeChild(createButton);            //при клике кнопка исчезает
-		
-		var inputFirst = document.createElement('input');//создать элемент
-		var inputSecond = document.createElement('input');//создать элемент
-
-		var buttonSum = document.createElement("button");//в документе создать элемент
-		buttonSum.innerHTML = "+";                       //добавиь в HTML
-		
-		var buttonDeduc = document.createElement('button');
-		buttonDeduc.innerHTML = '-';
-		
-		var buttonMult = document.createElement('button');
-		buttonMult.innerHTML = '*';
-	
-		var buttonDivid = document.createElement('button');
-		buttonDivid.innerHTML = '/';
-
-		contentDiv.appendChild(inputFirst); //присоединить ребенка
-		contentDiv.appendChild(inputSecond);
-		contentDiv.appendChild(buttonSum);
-		contentDiv.appendChild(buttonDeduc);
-		contentDiv.appendChild(buttonMult);
-		contentDiv.appendChild(buttonDivid);
-		contentDiv.appendChild(result);
-		
-
-
-		addSumListener(buttonSum, inputFirst, inputSecond);
-		addDeducListener(buttonDeduc, inputFirst, inputSecond);
-		addMultListener(buttonMult, inputFirst, inputSecond);
-		addDividListener(buttonDivid, inputFirst, inputSecond);
-	});
-		
-		
-		
-	function addSumListener(btn, inp1, inp2) {
-		
-		btn.addEventListener("click", function () {
-			/** проверять какой тип приходит в inp1.value**/
-			result.innerHTML = (+inp1.value + +inp2.value);
-		});
-	};
-	
-	function addDeducListener(btn, inp1, inp2){
-		
-		btn.addEventListener("click", function(){
-			if(typeof(inp1.value && inp2.valye) !== "number"){
-			alert("введите число")
-		}else{
-            
-        };
-			result.innerHTML = (inp1.value - inp2.value);
-		});
-	};
-	
-	function addMultListener(btn, inp1, inp2){
-		
-		btn.addEventListener("click", function(){
-			
-			result.innerHTML = (inp1.value * inp2.value);	
-		});
-	};
-	
-	function addDividListener(btn, inp1, inp2){
-		
-		btn.addEventListener("click", function(){
-			
-			result.innerHTML = (inp1.value / inp2.value);
-		});
-	};
-
-
-})();
+          default:
+            input.value += 'default';
+            break;
+        }
+    });
+    
+    function clearInput(){
+        input.value = " ";
+    }
+   
+    
+})()
