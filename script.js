@@ -24,7 +24,8 @@
             tempNumber = input.value;
             clearInput();
             break;
-               
+
+           
         case '=':  // if (x === 'value2')
             if(tempNumber != 0){
                input.value = +tempNumber + +input.value;

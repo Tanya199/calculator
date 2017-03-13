@@ -1,0 +1,104 @@
+@import 'https://fonts.googleapis.com/css?family=Maven+Pro';
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100vh;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    background: #fff;
+    
+}
+#content{
+    box-shadow: -4px 10px 30px 0px rgba(0,0,0,0.48);
+    transition: box-shadow 0.1s ease;
+    border: 1px solid #9d9d9d;
+    border-radius: 0.2em;
+    border-radius: 0.2em;
+    display: flex;
+    flex-flow: row wrap;
+    width: 230px;
+    height: 367px;
+    position: absolute;
+    
+    
+}
+input{
+    display: block;
+    background-color: rgba(81,81,81,0.5);
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 80px;
+    background-image: linear-gradient(rgba(185,185,185,0.302), rgba(96,96,96,0.102));
+    font-size: 3.8em;
+    border: none;
+    
+}
+.misc{
+    display: flex;
+    flex-direction: row;
+}
+.action{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 171px;
+    bottom: 57px;
+    
+}
+#number{
+    position: relative;
+    bottom: 285px;
+}
+.numeric{
+    
+}       
+.row-1 {
+    display: flex;
+    flex-direction: row;
+}
+.row-2{
+    display: flex;
+    flex-direction: row;
+}
+.row-3{
+    display: flex;
+    flex-direction: row;
+    
+}
+.row-4{
+    display: flex;
+    flex-direction: row;
+    
+}
+.btn {
+    width: 57px;
+    height: 57px;
+    justify-content: center;
+    border: 0px solid black;
+    cursor: pointer;
+    border-left: 1px solid #9d9d9d;
+    border-bottom: 1px solid #9d9d9d;
+    color: #0e0e0e;
+    font-size: 1.7em;
+    font-family: 'Maven Pro', 'ubuntu';
+    font-weight: 300;
+    
+			
+}
+.orang{
+    background: #ff8d00;
+}
+.gray{
+    background: #d1d1d1;
+}
+.double{
+    width: 114px;
+}
