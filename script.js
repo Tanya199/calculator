@@ -18,9 +18,17 @@
        switch(event.target.innerHTML) {
           case 'C':  // if (x === 'value1')
             clearInput();
+            break; 
+           
+           case '+/-':  // if (x === 'value1')
+               if(input.value.charAt(0) == "-"){
+                    input.value = input.value.substr(1);
+               }else{
+                   input.value = "-" + input.value;
+               }
             break;
-
-          case '+':  // if (x === 'value2')
+           
+           case '+':  // if (x === 'value2')
             tempNumber = input.value;
             clearInput();
             break;
@@ -40,7 +48,7 @@
     });
     
     function clearInput(){
-        input.value = " ";
+        input.value = "";
     }
    
     
