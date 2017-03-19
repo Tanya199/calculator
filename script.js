@@ -62,7 +62,9 @@
                     input.value = +tempNumber * +input.value;
                 }else if(action == 'divide'){
                     input.value = +tempNumber / +input.value;
-             
+                }else if(action == 'pct'){
+                    input.value = +tempNumber  +input.value;
+                }
             }
             tempNumber = 0;
             break;
