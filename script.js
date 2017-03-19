@@ -9,6 +9,7 @@
     var expressionDiv = document.getElementById("expression");
     
     numberDiv.addEventListener("click", function(event){
+        
 //        input.value = input.value + e.target.innerHTML;
         input.value += event.target.innerHTML;
         console.log(event.target.innerHTML);
@@ -30,13 +31,38 @@
            
            case '+':  // if (x === 'value2')
             tempNumber = input.value;
+            action = 'sum';
             clearInput();
             break;
-
+        
+           case '-':  // if (x === 'value2')
+            tempNumber = input.value;
+            action = 'div';
+            clearInput();
+            break; 
            
+           case 'x':  // if (x === 'value2')
+            tempNumber = input.value;
+            action = 'mult';
+            clearInput();
+            break;
+               
+           case '/':  // if (x === 'value2')
+            tempNumber = input.value;
+            action = 'divide';
+            clearInput();
+            break;
         case '=':  // if (x === 'value2')
             if(tempNumber != 0){
-               input.value = +tempNumber + +input.value;
+                if(action == 'sum'){
+                    input.value = +tempNumber + +input.value;
+                } else if(action == 'div'){
+                    input.value = +tempNumber - +input.value;
+                }else if(action == 'mult'){
+                    input.value = +tempNumber * +input.value;
+                }else if(action == 'divide'){
+                    input.value = +tempNumber / +input.value;
+             
             }
             tempNumber = 0;
             break;
@@ -50,6 +76,8 @@
     function clearInput(){
         input.value = "";
     }
+    
+    
    
     
 })()
