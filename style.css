@@ -29,6 +29,9 @@ body{
     
     
 }
+#expression{
+
+}
 input{
     display: block;
     background-color: rgba(81,81,81,0.5);
@@ -51,6 +54,7 @@ input{
     position: relative;
     left: 171px;
     bottom: 57px;
+    width: 58px;
     
 }
 #number{

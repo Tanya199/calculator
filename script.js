@@ -84,7 +84,7 @@
     function getValue() {
         var value;
         if(isNaN(+input.value)){
-            value = tempNumber/(input.value.slice(0, input.value.length-1));
+            value = tempNumber/100*(input.value.slice(0, input.value.length-1));
         } else {
             value = +input.value;
         }
