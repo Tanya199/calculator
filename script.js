@@ -1,27 +1,22 @@
 (function(){
     
-    console.log('sadfghj');
     var tempNumber = 0;
-    var action = null;
-    
+    var action = null;    
     var numberDiv = document.getElementById("number");
     var input = document.getElementsByTagName("input")[0];
     var expressionDiv = document.getElementById("expression");
     
     numberDiv.addEventListener("click", function(event){
-        
-//        input.value = input.value + e.target.innerHTML;
         input.value += event.target.innerHTML;
-        console.log(event.target.innerHTML);
     });
     expressionDiv.addEventListener("click", function(event){
     
        switch(event.target.innerHTML) {
-          case 'C':  // if (x === 'value1')
+          case 'C':
             clearInput();
             break; 
            
-           case '+/-':  // if (x === 'value1')
+           case '+/-':
                if(input.value.charAt(0) == "-"){
                     input.value = input.value.substr(1);
                }else{
@@ -29,39 +24,37 @@
                }
             break;
            
-           case '+':  // if (x === 'value2')
+           case '+':
             tempNumber = +input.value;
             action = 'sum';
             clearInput();
             break;
         
-           case '-':  // if (x === 'value2')
+           case '-':
             tempNumber = +input.value;
             action = 'div';
             clearInput();
             break; 
            
-           case 'x':  // if (x === 'value2')
+           case 'x':
             tempNumber = +input.value;
             action = 'mult';
             clearInput();
             break;
                
-           case '/':  // if (x === 'value2')
+           case '/':
             tempNumber = +input.value;
             action = 'divide';
             clearInput();
             break;
                
-           case '%':  // if (x === 'value2')
+           case '%':
             input.value = input.value+'%';
             break;
         
-        case '=':  // if (x === 'value2')
-            if(tempNumber != 0){
-                
+            case '=':
+                if(tempNumber != 0){ 
                 var value = getValue();
-                
                 if(action == 'sum'){
                     input.value = tempNumber + value;
                 } else if(action == 'div'){
@@ -84,7 +77,7 @@
     function getValue() {
         var value;
         if(isNaN(+input.value)){
-            value = tempNumber/100*(input.value.slice(0, input.value.length-1));
+            value = tempNumber/100 * (input.value.slice(0, input.value.length - 1));
         } else {
             value = +input.value;
         }
@@ -93,9 +86,5 @@
     
     function clearInput(){
         input.value = "";
-    }
-    
-    
-   
-    
+    }  
 })()
